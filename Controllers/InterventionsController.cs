@@ -30,7 +30,7 @@ namespace RestApi.Controllers
         [HttpGet("pending")]
         public List<Intervention> GetStatus()
         {
-            return _context.interventions.Where(i => i.status == "Pending" && i.start_date == null).ToList();
+            return _context.interventions.Where(i => i.status == "Pending" && i.start_at == null).ToList();
         }
 
         // GET: api/interventions/5
