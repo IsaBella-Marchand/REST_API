@@ -12,7 +12,7 @@ namespace RestApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class InterventionsController : ControllerBase
+    public class interventionsController : ControllerBase
     {
         private readonly ApiContext _context;
         public InterventionsController(ApiContext context)
