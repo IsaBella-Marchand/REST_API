@@ -15,7 +15,7 @@ namespace RestApi.Controllers
     public class interventionsController : ControllerBase
     {
         private readonly ApiContext _context;
-        public InterventionsController(ApiContext context)
+        public interventionsController(ApiContext context)
         {
             _context = context;
         }
