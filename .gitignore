@@ -1,5 +1,5 @@
 /bin
-/ojb
+/obj
 appsettings.json
 appsettings_deploy.json
 appsettings.Development.json

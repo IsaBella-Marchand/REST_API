@@ -16,7 +16,7 @@ public class Intervention
     public long battery_id { get; set; }
     public long? column_id { get; set; } = null;
     public long? elevator_id { get; set; } = null;
-    public long? employee_id { get; set; } = null;
+    public long? taskperson_id { get; set; } = null;
     public DateTime? start_date { get; set; } = null;
     public DateTime? end_date { get; set; } = null;
     public string result { get; set; }
