@@ -29,7 +29,7 @@ namespace RestApi
         );
 
         services.AddDbContext<ApiContext>(options =>
-        options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+        options.UseMySql("server=" + Configuration["SERVER"] + ";port=3306;database=" + Configuration["DATABASE"] + ";user=" + Configuration["USER"] + ";password=" + Configuration["PASSWORD"]));
         services.AddMvc();
         }
         
