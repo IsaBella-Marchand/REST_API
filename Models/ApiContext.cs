@@ -31,7 +31,7 @@ namespace RestApi.Models
             modelBuilder.Entity<Elevator>()
                 .HasOne(p => p.columns)
                 .WithMany(b => b.elevators)
-                .HasForeignKey(p => p.column_id);
+                .HasForeignKey(p => p.column_id);            
         }
 
         public DbSet<Building> buildings { get; set; }
@@ -41,5 +41,6 @@ namespace RestApi.Models
         public DbSet<Lead> leads { get; set; }
         public DbSet<Customer> customers { get; set; }
         public DbSet<Intervention> interventions { get; set; }
+        public DbSet<Employe> employees { get; set; }
     }
 }
