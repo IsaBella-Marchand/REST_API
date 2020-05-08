@@ -22,11 +22,22 @@ namespace RestApi
 
         public void ConfigureServices(IServiceCollection services)
         {
-        services.AddCors();
+            //Call API semble ne pas toujours fonctionné. Ajout ligne 26-35 pour patcher le problème
+            services.AddCors(option =>
+            {
+                option.AddDefaultPolicy(
+                    builder => 
+                    {
+                        builder.AllowAnyOrigin()
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
+                    });
+                });
+        // services.AddCors();
 
-        services.AddControllers().AddNewtonsoftJson(options =>
-            options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
-        );
+        // services.AddControllers().AddNewtonsoftJson(options =>
+        //     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+        // );
 
         services.AddDbContext<ApiContext>(options =>
         options.UseMySql("server=" + Configuration["SERVER"] + ";port=3306;database=" + Configuration["DATABASE"] + ";user=" + Configuration["USER"] + ";password=" + Configuration["PASSWORD"]));
